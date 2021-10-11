@@ -1,0 +1,63 @@
+.logo {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.namewrap {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.name,
+.shadow {
+  font-size: 36px;
+  line-height: 1.167em;
+  letter-spacing: 0.2em;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.name {
+  display: inline-flex;
+  background: radial-gradient(
+      20% 49% at 12% 30%,
+      #efedef 0%,
+      rgba(239, 237, 239, 0) 100%
+    ),
+    radial-gradient(24% 74% at 45% 30%, #efedef 0%, rgba(239, 237, 239, 0) 100%),
+    linear-gradient(0deg, #676567, #676567);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  z-index: 2;
+}
+
+.shadow {
+  text-shadow: 0 0.5px white;
+  position: absolute;
+  z-index: 1;
+}
+
+.role {
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.2em;
+  font-weight: 400;
+  color: #e0dee0;
+  text-transform: uppercase;
+  margin-top: 8px;
+}
+
+@media (max-width: 767px) {
+  .name,
+  .shadow {
+    font-size: 28px;
+    letter-spacing: 0.15em;
+  }
+
+  .role {
+    font-size: 12px;
+  }
+}

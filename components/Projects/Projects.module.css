@@ -1,0 +1,15 @@
+.projects {
+  max-width: 1170px;
+  margin: 0 auto;
+  padding: 4rem 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 767px) {
+  .projects {
+    gap: 3rem 1rem;
+  }
+}

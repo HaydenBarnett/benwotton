@@ -1,0 +1,19 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.fullscreen {
+  height: 100vh;
+}
+
+.inner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  padding: 40px 0;
+  overflow: hidden;
+}

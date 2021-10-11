@@ -1,0 +1,35 @@
+.project {
+  width: 168px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+}
+
+.name {
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 14px;
+  letter-spacing: 0.2em;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+
+.role {
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 14px;
+  color: #676567;
+  margin: 0;
+}
+
+@media (max-width: 767px) {
+  .project {
+    width: 130px;
+  }
+}
