@@ -1,4 +1,5 @@
-// Foundation
+// Layout
+export * from "./Layout/Layout";
 
 // Media
 export * from "./Logo/Logo";

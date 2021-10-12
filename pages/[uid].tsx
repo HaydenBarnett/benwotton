@@ -1,38 +1,31 @@
 import Head from "next/head";
 import * as PrismicTypes from "@prismicio/types";
 import { GetStaticPaths, GetStaticProps } from "next";
-import { Header, SliceZone } from "@components";
+import { SliceZone } from "@components";
 import {
   Client,
   queryRepeatableDocuments,
-  globalsResolver,
   pageResolver,
   projectsResolver,
 } from "@utils";
 
 type PageProps = {
   page?: any;
-  pages?: any;
-  globals?: any;
   projects?: any;
 };
 
-const Page = ({ page, pages, globals, projects }: PageProps) => {
+const Page = ({ page, projects }: PageProps) => {
   if (page?.data) {
-    const { defaultMeta, logo, nav } = globalsResolver(globals?.data, pages);
     const { meta, slices } = pageResolver(page?.data);
     const allProjects = projectsResolver(projects);
     return (
       <>
         <Head>
-          <title>{meta.metaTitle ?? defaultMeta.metaTitle}</title>
-          <meta
-            property="og:description"
-            content={meta.metaDescription ?? defaultMeta.metaDescription}
-          />
-          <meta property="og:image" content={defaultMeta.metaImage} />
+          {meta.metaTitle && <title>{meta.metaTitle}</title>}
+          {meta.metaDescription && (
+            <meta property="og:description" content={meta.metaDescription} />
+          )}
         </Head>
-        <Header logo={logo} nav={nav} fullscreen={false} />
         <SliceZone slices={slices} projects={allProjects} />
       </>
     );

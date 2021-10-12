@@ -1,9 +1,8 @@
 import NextLink from "next/link";
 import cx from "classnames";
 import styles from "./Header.module.css";
-import { Nav, Logo } from "../";
-import { LogoProps } from "../Logo/Logo";
-import { NavProps } from "../Nav/Nav";
+import { Logo, Nav } from "../";
+import type { LogoProps, NavProps } from "../";
 
 type HeaderProps = {
   logo?: LogoProps;

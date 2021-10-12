@@ -1,4 +1,4 @@
-export const globalsResolver = (globals: any, pages: any) => ({
+export const globalsResolver = (globals: any, pages?: any) => ({
   defaultMeta: {
     favicon: globals?.favicon?.url,
     metaTitle: globals?.meta_title,
@@ -17,6 +17,7 @@ export const globalsResolver = (globals: any, pages: any) => ({
 });
 
 export const navResolver = (pages: any) => {
+  if (!pages) return undefined;
   return pages?.map((page: any) => ({
     url: `/${page.uid}`,
     title: page.data.title,
