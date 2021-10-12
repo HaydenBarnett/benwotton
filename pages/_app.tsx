@@ -5,7 +5,7 @@ import { Layout } from "@components";
 import { globalsResolver } from "@utils";
 
 function App({ Component, pageProps }: AppProps) {
-  const { defaultMeta, logo, nav } = globalsResolver(
+  const { defaultMeta, logo, background, nav } = globalsResolver(
     pageProps.globals?.data,
     pageProps.pages
   );
@@ -23,7 +23,7 @@ function App({ Component, pageProps }: AppProps) {
           <meta property="og:image" content={defaultMeta.metaImage} />
         )}
       </Head>
-      <Layout logo={logo} nav={nav}>
+      <Layout logo={logo} background={background} nav={nav}>
         <Component {...pageProps} />
       </Layout>
     </>

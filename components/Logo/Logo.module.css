@@ -1,11 +1,12 @@
 .logo {
+  position: relative;
   text-align: center;
   display: flex;
   flex-direction: column;
+  z-index: 5;
 }
 
 .namewrap {
-  position: relative;
   display: flex;
   justify-content: center;
 }

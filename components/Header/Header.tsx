@@ -4,13 +4,19 @@ import styles from "./Header.module.css";
 import { Logo, Nav } from "../";
 import type { LogoProps, NavProps } from "../";
 
-type HeaderProps = {
+export type BackgroundProps = {
+  poster?: string;
+  video?: string;
+};
+
+export type HeaderProps = {
   logo?: LogoProps;
   nav?: NavProps;
+  background?: BackgroundProps;
   fullscreen?: boolean;
 };
 
-export const Header = ({ logo, nav, fullscreen }: HeaderProps) => {
+export const Header = ({ logo, background, nav, fullscreen }: HeaderProps) => {
   const headerClassName = cx(styles.header, {
     [styles.fullscreen]: fullscreen,
   });
@@ -22,6 +28,17 @@ export const Header = ({ logo, nav, fullscreen }: HeaderProps) => {
             <Logo {...logo} />
           </a>
         </NextLink>
+        {background?.poster && background?.video && (
+          <video
+            className={styles.video}
+            autoPlay
+            muted
+            loop
+            poster={background.poster}
+          >
+            <source src={background.video} type="video/mp4" />
+          </video>
+        )}
       </div>
       <Nav {...nav} />
     </div>

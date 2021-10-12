@@ -9,6 +9,10 @@ export const globalsResolver = (globals: any, pages?: any) => ({
     name: globals?.name,
     role: globals?.job_title,
   },
+  background: {
+    video: globals?.video?.url,
+    poster: globals?.poster?.url,
+  },
   nav: {
     email: globals?.email?.url,
     resume: globals?.resume?.url,
