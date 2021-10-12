@@ -37,7 +37,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
   const client = Client();
   const response = await client.query("");
   const page = response.results.filter(
-    (doc) => doc.uid === context.params.uid
+    (doc) => doc.uid === context?.params?.uid
   )[0];
   const pages = response.results.filter((doc) => doc.type === "page");
   const globals = response.results.filter((doc) => doc.type === "globals")[0];

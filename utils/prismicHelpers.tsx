@@ -1,22 +1,5 @@
 import Prismic from "@prismicio/client";
-import Link from "next/link";
-import {
-  API_ENDPOINT,
-  API_TOKEN,
-  linkResolver,
-  hrefResolver,
-} from "../prismic-config";
-
-// Helper function to convert Prismic Rich Text links to Next/Link components
-export const customLink = (type, element, content, children, index) => (
-  <Link
-    key={element.data.id}
-    href={hrefResolver(element.data)}
-    as={linkResolver(element.data)}
-  >
-    <a>{content}</a>
-  </Link>
-);
+import { API_ENDPOINT, API_TOKEN } from "../prismic-config";
 
 const createClientOptions = (req = null, prismicAccessToken = "") => {
   const reqOption = req ? { req } : {};
