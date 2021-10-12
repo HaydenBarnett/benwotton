@@ -20,6 +20,25 @@ body {
   color: #fff;
 }
 
+body {
+  overflow-y: scroll;
+}
+
+body::-webkit-scrollbar {
+  width: 12px;
+  background-color: #1e1e1e;
+}
+
+body::-webkit-scrollbar-thumb {
+  border-radius: 6px;
+  background-color: #676567;
+}
+
+body::-webkit-scrollbar-track {
+  border-radius: 0;
+  background-color: #1e1e1e;
+}
+
 a {
   color: inherit;
   text-decoration: none;
