@@ -10,7 +10,7 @@
 }
 
 ::selection {
-  background: #a4a1a4;
+  background: var(--grey-300);
 }
 
 *,
