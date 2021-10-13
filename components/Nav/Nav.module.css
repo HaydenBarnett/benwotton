@@ -10,74 +10,78 @@
   justify-content: center;
   align-items: center;
   z-index: 5;
-  transition: var(--duration) ease border, var(--duration) ease background,
+  transition: var(--duration) ease border, var(--duration) ease background-color,
     var(--duration) ease height;
-}
 
-.nav.fullscreen {
-  height: 80px;
-  border-top-color: var(--grey-500);
-  border-bottom-color: transparent;
-  background-color: rgba(0, 0, 0, 0.8);
+  &.fullscreen {
+    height: 80px;
+    border-top-color: var(--grey-500);
+    border-bottom-color: transparent;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
 }
 
 .link {
   margin-left: 1rem;
-}
 
-.link:first-child {
-  margin-left: 0;
-}
+  &:first-child {
+    margin-left: 0;
+  }
 
-.link a {
-  color: var(--grey-300);
-  text-transform: uppercase;
-  font-size: 12px;
-  font-weight: bold;
-  letter-spacing: 0.2em;
-  text-decoration: none;
-  padding: 1rem;
-  display: flex;
-  align-items: center;
-  transition: 0.3s ease color;
-}
+  & a {
+    color: var(--grey-300);
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 0.2em;
+    text-decoration: none;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    transition: 0.3s ease color;
 
-.link a:hover {
-  color: var(--white);
-}
+    &:hover {
+      color: var(--white);
+    }
 
-.link a > div {
-  margin-right: 0.5rem !important;
+    & > div {
+      margin-right: 0.5rem !important;
+    }
+  }
 }
 
 @media (max-width: 767px) {
   .nav {
     height: auto;
+    &.fullscreen {
+      height: auto;
+    }
   }
-  .nav.fullscreen {
-    height: auto;
-  }
+
   .link {
     margin: 0;
-  }
-  .link:first-child {
-    margin: 0;
+    &:first-child {
+      margin: 0;
+    }
   }
 }
 
 @media (max-width: 576px) {
   .link {
     width: 50%;
-  }
-  .link a {
-    padding: 1.25rem 0rem;
-    justify-content: center;
-    border-bottom: 1px solid var(--grey-500);
-  }
-  .link:nth-child(even) a {
-    border-left: 1px solid var(--grey-500);
-  }
-  .link:nth-last-child(-n + 2) a {
-    border-bottom: 0;
+
+    & a {
+      padding: 1.25rem 0rem;
+      justify-content: center;
+      border-bottom: 1px solid var(--grey-500);
+    }
+
+    &:nth-child(even) a {
+      border-left: 1px solid var(--grey-500);
+    }
+
+    &:nth-last-child(-n + 2) a {
+      border-bottom: 0;
+    }
   }
 }

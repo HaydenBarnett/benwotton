@@ -11,10 +11,10 @@
 .videoWrapper {
   position: relative;
   padding-top: 56.25%;
-}
 
-.videoWrapper > div {
-  position: absolute;
-  top: 0;
-  left: 0;
+  & > div {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
 }

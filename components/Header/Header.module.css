@@ -6,14 +6,14 @@
   height: 240px;
   overflow: hidden;
   transition: var(--duration) ease height;
-}
 
-.header.fullscreen {
-  height: 100%;
-}
+  &.fullscreen {
+    height: 100%;
 
-.header.fullscreen .video {
-  opacity: 1;
+    & .video {
+      opacity: 1;
+    }
+  }
 }
 
 .inner {

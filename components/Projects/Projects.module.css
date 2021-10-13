@@ -6,10 +6,8 @@
   justify-content: center;
   gap: 4rem;
   flex-wrap: wrap;
-}
 
-@media (max-width: 767px) {
-  .projects {
+  @media (max-width: 767px) {
     gap: 3rem 1rem;
   }
 }
