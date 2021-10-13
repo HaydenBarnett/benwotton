@@ -56,7 +56,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   );
   return {
     paths: pages.map((page: PrismicTypes.PrismicDocument) => `/${page.uid}`),
-    fallback: true,
+    fallback: false,
   };
 };
 
