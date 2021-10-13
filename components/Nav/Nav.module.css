@@ -6,6 +6,7 @@
   border-bottom: 1px solid #1e1e1e;
   background-color: rgba(0, 0, 0, 1);
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   z-index: 5;
@@ -14,6 +15,7 @@
 
 .nav.fullscreen {
   height: 80px;
+  border-top-color: #1e1e1e;
   border-bottom-color: transparent;
   background-color: rgba(0, 0, 0, 0.8);
 }
@@ -50,12 +52,31 @@
 @media (max-width: 767px) {
   .nav {
     height: auto;
-    flex-wrap: wrap;
+  }
+  .nav.fullscreen {
+    height: auto;
   }
   .link {
-    margin: 0 0.5rem;
+    margin: 0;
   }
   .link:first-child {
-    margin: 0 0.5rem;
+    margin: 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .link {
+    width: 50%;
+  }
+  .link a {
+    padding: 1.25rem 0rem;
+    justify-content: center;
+    border-bottom: 1px solid #1e1e1e;
+  }
+  .link:nth-child(even) a {
+    border-left: 1px solid #1e1e1e;
+  }
+  .link:nth-last-child(-n + 2) a {
+    border-bottom: 0;
   }
 }
