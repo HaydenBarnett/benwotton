@@ -1,14 +1,15 @@
 import styles from "./Projects.module.css";
 import { Project } from "../";
+import type { ProjectProps } from "../";
 
-type ProjectsProps = {
-  projects: any;
+export type ProjectsProps = {
+  projects: ProjectProps[];
 };
 
 export const Projects = ({ projects }: ProjectsProps) => {
   return (
     <div className={styles.projects}>
-      {projects.map((project: any, i: number) => {
+      {projects.map((project, i: number) => {
         const { image, url, name, role } = project;
         return (
           <Project key={i} image={image} url={url} name={name} role={role} />

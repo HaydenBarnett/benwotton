@@ -1,8 +1,9 @@
 import { Video, Projects } from "../";
+import type { ProjectProps } from "../";
 
-type SliceZoneProps = {
+export type SliceZoneProps = {
   slices?: any;
-  projects?: any;
+  projects?: ProjectProps[];
 };
 
 export const SliceZone = ({ slices, projects }: SliceZoneProps) => {
@@ -13,6 +14,7 @@ export const SliceZone = ({ slices, projects }: SliceZoneProps) => {
           case "video":
             return <Video key={i} url={slice.primary.video.embed_url} />;
           case "projects":
+            if (!projects) return null;
             return <Projects key={i} projects={projects} />;
           default:
             return null;

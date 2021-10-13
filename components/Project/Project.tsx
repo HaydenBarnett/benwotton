@@ -4,7 +4,7 @@ import cx from "classnames";
 import { ConditionalLink } from "../";
 import styles from "./Project.module.css";
 
-type ProjectProps = {
+export type ProjectProps = {
   image: string;
   url?: string;
   name?: string;
