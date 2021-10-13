@@ -1,7 +1,33 @@
+:root {
+  --white: #fff;
+  --grey-100: #efedef;
+  --grey-200: #e0dee0;
+  --grey-300: #a4a1a4;
+  --grey-400: #676567;
+  --grey-500: #1e1e1e;
+  --black: #000;
+  --duration: 0.8s;
+}
+
+::selection {
+  background: #a4a1a4;
+}
+
 *,
 *:before,
 *:after {
   box-sizing: inherit;
+}
+
+html,
+body {
+  margin: 0;
+  font-family: "Raleway", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-feature-settings: "lnum";
+  background-color: var(--black);
+  color: var(--white);
+  height: 100%;
 }
 
 html {
@@ -11,35 +37,23 @@ html {
   -webkit-tap-highlight-color: transparent;
 }
 
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: "Raleway", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  font-feature-settings: "lnum";
-  background-color: #000;
-  color: #fff;
-  height: 100%;
-}
-
 body {
   overflow-y: scroll;
 }
 
 body::-webkit-scrollbar {
   width: 12px;
-  background-color: #1e1e1e;
+  background-color: var(--grey-500);
 }
 
 body::-webkit-scrollbar-thumb {
   border-radius: 6px;
-  background-color: #676567;
+  background-color: var(--grey-400);
 }
 
 body::-webkit-scrollbar-track {
   border-radius: 0;
-  background-color: #1e1e1e;
+  background-color: var(--grey-500);
 }
 
 #__next {

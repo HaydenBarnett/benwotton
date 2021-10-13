@@ -5,7 +5,7 @@
   justify-content: space-between;
   height: 240px;
   overflow: hidden;
-  transition: 0.8s ease height;
+  transition: var(--duration) ease height;
 }
 
 .header.fullscreen {
@@ -33,5 +33,5 @@
   opacity: 0.5;
   user-select: none;
   pointer-events: none;
-  transition: 0.8s ease opacity;
+  transition: var(--duration) ease opacity;
 }

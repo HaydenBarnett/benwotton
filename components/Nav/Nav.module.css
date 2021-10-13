@@ -3,19 +3,20 @@
   width: 100%;
   height: 58px;
   border-top: 1px solid transparent;
-  border-bottom: 1px solid #1e1e1e;
+  border-bottom: 1px solid var(--grey-500);
   background-color: rgba(0, 0, 0, 1);
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   z-index: 5;
-  transition: 0.8s ease border, 0.8s ease background, 0.8s ease height;
+  transition: var(--duration) ease border, var(--duration) ease background,
+    var(--duration) ease height;
 }
 
 .nav.fullscreen {
   height: 80px;
-  border-top-color: #1e1e1e;
+  border-top-color: var(--grey-500);
   border-bottom-color: transparent;
   background-color: rgba(0, 0, 0, 0.8);
 }
@@ -29,7 +30,7 @@
 }
 
 .link a {
-  color: #a4a1a4;
+  color: var(--grey-300);
   text-transform: uppercase;
   font-size: 12px;
   font-weight: bold;
@@ -42,7 +43,7 @@
 }
 
 .link a:hover {
-  color: #fff;
+  color: var(--white);
 }
 
 .link a > div {
@@ -71,10 +72,10 @@
   .link a {
     padding: 1.25rem 0rem;
     justify-content: center;
-    border-bottom: 1px solid #1e1e1e;
+    border-bottom: 1px solid var(--grey-500);
   }
   .link:nth-child(even) a {
-    border-left: 1px solid #1e1e1e;
+    border-left: 1px solid var(--grey-500);
   }
   .link:nth-last-child(-n + 2) a {
     border-bottom: 0;
