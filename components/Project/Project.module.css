@@ -8,6 +8,12 @@
 .image {
   width: 100%;
   height: auto;
+  opacity: 0;
+  transition: 0.8s ease opacity;
+}
+
+.image.isLoaded {
+  opacity: 1;
 }
 
 .name {

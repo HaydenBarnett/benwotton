@@ -1,5 +1,8 @@
-import styles from "./Project.module.css";
+import { useState } from "react";
+import Image from "next/image";
+import cx from "classnames";
 import { ConditionalLink } from "../";
+import styles from "./Project.module.css";
 
 type ProjectProps = {
   image: string;
@@ -9,16 +12,25 @@ type ProjectProps = {
 };
 
 export const Project = ({ image, url, name, role }: ProjectProps) => {
+  const [isLoaded, setIsLoaded] = useState(false);
+  const imageClassName = cx(styles.image, {
+    [styles.isLoaded]: isLoaded,
+  });
   return (
     <ConditionalLink href={url} target="_blank">
       <div className={styles.project}>
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          className={styles.image}
+        <Image
+          className={imageClassName}
           src={image}
           width={168}
           height={256}
           alt=""
+          onLoad={(e) => {
+            const target = e.target as HTMLImageElement;
+            if (target.src.indexOf("data:image/gif;base64") < 0) {
+              setIsLoaded(true);
+            }
+          }}
         />
         <p className={styles.name}>{name}</p>
         <p className={styles.role}>{role}</p>
