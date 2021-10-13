@@ -17,9 +17,12 @@ export const Project = ({ image, url, name, role }: ProjectProps) => {
   const imageClassName = cx(styles.image, {
     [styles.isLoaded]: isLoaded,
   });
+  const projectClassName = cx(styles.project, {
+    [styles.link]: !!url,
+  });
   return (
     <ConditionalLink href={url} target="_blank">
-      <div className={styles.project}>
+      <div className={projectClassName}>
         <Image
           className={imageClassName}
           src={image}

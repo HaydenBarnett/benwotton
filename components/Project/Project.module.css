@@ -4,6 +4,14 @@
   flex-direction: column;
   text-align: center;
 
+  & > div {
+    transition: var(--duration) ease box-shadow;
+  }
+
+  &.link:hover > div {
+    box-shadow: 0 0 2rem -0.5rem var(--grey-400);
+  }
+
   @media (max-width: 767px) {
     width: 130px;
   }
