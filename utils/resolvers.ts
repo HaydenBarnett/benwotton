@@ -1,4 +1,4 @@
-export const globalsResolver = (globals: any, pages?: any) => ({
+export const globalsResolver = (globals: any) => ({
   defaultMeta: {
     favicon: globals?.favicon?.url,
     metaTitle: globals?.meta_title,
@@ -16,15 +16,15 @@ export const globalsResolver = (globals: any, pages?: any) => ({
   nav: {
     email: globals?.email?.url,
     resume: globals?.resume?.url,
-    items: navResolver(pages),
+    items: navResolver(globals?.nav),
   },
 });
 
-export const navResolver = (pages: any) => {
-  if (!pages) return undefined;
-  return pages?.map((page: any) => ({
-    url: `/${page.uid}`,
-    title: page.data.title,
+export const navResolver = (nav: any) => {
+  if (!nav) return undefined;
+  return nav.map((item: any) => ({
+    url: `/${item?.link?.uid}`,
+    title: item.title,
   }));
 };
 

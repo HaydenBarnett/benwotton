@@ -6,8 +6,7 @@ import { globalsResolver } from "@utils";
 
 function App({ Component, pageProps }: AppProps) {
   const { defaultMeta, logo, background, nav } = globalsResolver(
-    pageProps.globals?.data,
-    pageProps.pages
+    pageProps.globals?.data
   );
   return (
     <>

@@ -39,13 +39,11 @@ export const getStaticProps: GetStaticProps = async (context) => {
   const page = response.results.filter(
     (doc) => doc.uid === context?.params?.uid
   )[0];
-  const pages = response.results.filter((doc) => doc.type === "page");
   const globals = response.results.filter((doc) => doc.type === "globals")[0];
   const projects = response.results.filter((doc) => doc.type === "project");
   return {
     props: {
       page,
-      pages,
       globals,
       projects,
     },
