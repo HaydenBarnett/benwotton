@@ -42,5 +42,6 @@ export const projectsResolver = (projects: any) => {
     url: project.data?.link,
     name: project.data?.name,
     role: project.data?.role,
+    date: project.data?.date,
   }));
 };

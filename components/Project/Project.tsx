@@ -9,6 +9,7 @@ export type ProjectProps = {
   url?: string;
   name?: string;
   role?: string;
+  date?: string;
 };
 
 export const Project = ({ image, url, name, role }: ProjectProps) => {

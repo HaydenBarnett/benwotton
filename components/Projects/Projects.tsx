@@ -7,9 +7,16 @@ export type ProjectsProps = {
 };
 
 export const Projects = ({ projects }: ProjectsProps) => {
+  const sortedProjects = [...projects].sort((a, b) => {
+    if (a.date && b.date) return a.date < b.date ? 1 : -1;
+    if (a.date && !b.date) return -1;
+    if (!a.date && b.date) return 1;
+    return 0;
+  });
+
   return (
     <div className={styles.projects}>
-      {projects.map((project, i: number) => {
+      {sortedProjects.map((project, i: number) => {
         const { image, url, name, role } = project;
         return (
           <Project key={i} image={image} url={url} name={name} role={role} />
