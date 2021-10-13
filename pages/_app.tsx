@@ -13,10 +13,13 @@ function App({ Component, pageProps }: AppProps) {
       <Head>
         {defaultMeta.metaTitle && <title>{defaultMeta.metaTitle}</title>}
         {defaultMeta.metaDescription && (
-          <meta
-            property="og:description"
-            content={defaultMeta.metaDescription}
-          />
+          <>
+            <meta name="description" content={defaultMeta.metaDescription} />
+            <meta
+              property="og:description"
+              content={defaultMeta.metaDescription}
+            />
+          </>
         )}
         {defaultMeta.metaImage && (
           <meta property="og:image" content={defaultMeta.metaImage} />
