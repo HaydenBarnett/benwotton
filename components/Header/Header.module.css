@@ -1,8 +1,10 @@
 .header {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 210px;
+  overflow: hidden;
   transition: 0.6s ease height;
 }
 
@@ -15,13 +17,11 @@
 }
 
 .inner {
-  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-grow: 1;
   padding: 40px 0;
-  overflow: hidden;
 }
 
 .video {

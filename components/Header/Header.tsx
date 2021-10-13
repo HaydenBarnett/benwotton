@@ -28,19 +28,19 @@ export const Header = ({ logo, background, nav, fullscreen }: HeaderProps) => {
             <Logo {...logo} />
           </a>
         </NextLink>
-        {background?.poster && background?.video && (
-          <video
-            className={styles.video}
-            autoPlay
-            muted
-            loop
-            poster={background.poster}
-          >
-            <source src={background.video} type="video/mp4" />
-          </video>
-        )}
       </div>
-      <Nav {...nav} />
+      <Nav {...nav} fullscreen={fullscreen} />
+      {background?.poster && background?.video && (
+        <video
+          className={styles.video}
+          autoPlay
+          muted
+          loop
+          poster={background.poster}
+        >
+          <source src={background.video} type="video/mp4" />
+        </video>
+      )}
     </div>
   );
 };
