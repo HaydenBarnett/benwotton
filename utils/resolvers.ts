@@ -39,7 +39,7 @@ export const pageResolver = (page: any) => ({
 export const projectsResolver = (projects: any) => {
   return projects.map((project: any) => ({
     image: project.data?.image?.url,
-    url: null,
+    url: project.data?.link,
     name: project.data?.name,
     role: project.data?.role,
   }));
