@@ -20,10 +20,11 @@ export const Header = ({ logo, background, nav, fullscreen }: HeaderProps) => {
   const headerClassName = cx(styles.header, {
     [styles.fullscreen]: fullscreen,
   });
+  const logoHref = fullscreen && nav && nav.items ? nav?.items[0]?.url : "/";
   return (
     <div className={headerClassName}>
       <div className={styles.inner}>
-        <NextLink href="/" passHref>
+        <NextLink href={logoHref} passHref>
           <a>
             <Logo {...logo} />
           </a>

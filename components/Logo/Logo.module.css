@@ -52,7 +52,7 @@
   text-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
 }
 
-@media (max-width: 767px) {
+@media (max-width: 576px) {
   .name,
   .shadow {
     font-size: 28px;
