@@ -38,7 +38,7 @@
     padding: 1rem;
     display: flex;
     align-items: center;
-    transition: 0.3s ease color;
+    transition: var(--duration) ease color;
 
     &:hover {
       color: var(--white);
@@ -46,6 +46,12 @@
 
     & > div {
       margin-right: 0.5rem !important;
+    }
+  }
+
+  &.isActive {
+    & a {
+      color: white;
     }
   }
 }

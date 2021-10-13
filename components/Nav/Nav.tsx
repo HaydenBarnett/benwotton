@@ -1,4 +1,5 @@
 import NextLink from "next/link";
+import { useRouter } from "next/router";
 import cx from "classnames";
 import styles from "./Nav.module.css";
 import Image from "next/image";
@@ -16,6 +17,7 @@ export type NavProps = {
 };
 
 export const Nav = ({ items, resume, email, fullscreen }: NavProps) => {
+  const router = useRouter();
   const navClassName = cx(styles.nav, {
     [styles.fullscreen]: fullscreen,
   });
@@ -23,8 +25,12 @@ export const Nav = ({ items, resume, email, fullscreen }: NavProps) => {
     <div className={navClassName}>
       {items &&
         items.map((item, i) => {
+          const isActive = `/${router.query?.uid}` === item.url;
+          const linkClassName = cx(styles.link, {
+            [styles.isActive]: isActive,
+          });
           return (
-            <div key={i} className={styles.link}>
+            <div key={i} className={linkClassName}>
               <NextLink href={item.url} passHref>
                 <a>{item.title}</a>
               </NextLink>
