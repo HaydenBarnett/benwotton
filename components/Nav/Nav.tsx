@@ -40,7 +40,7 @@ export const Nav = ({ items, resume, email, fullscreen }: NavProps) => {
       {resume && (
         <div className={styles.link}>
           <NextLink href={resume} passHref>
-            <a target="_blank">
+            <a target="_blank" rel="noopener noreferrer">
               <Image
                 className={styles.image}
                 src="/icon-resume.svg"
