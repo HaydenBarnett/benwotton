@@ -16,6 +16,11 @@
   }
 }
 
+.link {
+  display: flex;
+  flex-grow: 1;
+}
+
 .inner {
   display: flex;
   align-items: center;
