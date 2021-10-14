@@ -19,6 +19,16 @@
 .link {
   display: flex;
   flex-grow: 1;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:focus-visible {
+    & > div > div {
+      outline: 1px dotted var(--white);
+    }
+  }
 }
 
 .inner {

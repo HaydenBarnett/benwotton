@@ -4,18 +4,22 @@ import Link from "next/link";
 type ConditionalLinkProps = {
   href?: string;
   target?: string;
+  className?: string;
   children?: ReactNode;
 };
 
 export const ConditionalLink = ({
   href,
   target,
+  className,
   children,
 }: ConditionalLinkProps) => {
   if (href) {
     return (
       <Link href={href} passHref>
-        <a target={target}>{children}</a>
+        <a target={target} className={className}>
+          {children}
+        </a>
       </Link>
     );
   }

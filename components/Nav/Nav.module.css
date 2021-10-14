@@ -44,6 +44,14 @@
       color: var(--white);
     }
 
+    &:focus {
+      outline: none;
+    }
+
+    &:focus-visible {
+      outline: 1px dotted var(--white);
+    }
+
     & > div {
       margin-right: 0.5rem !important;
     }
