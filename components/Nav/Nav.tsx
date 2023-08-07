@@ -1,4 +1,4 @@
-import NextLink from "next/link";
+import Link from "next/link";
 import { useRouter } from "next/router";
 import cx from "classnames";
 import styles from "./Nav.module.css";
@@ -31,42 +31,36 @@ export const Nav = ({ items, resume, email, fullscreen }: NavProps) => {
           });
           return (
             <div key={i} className={linkClassName}>
-              <NextLink href={item.url} passHref>
-                <a>{item.title}</a>
-              </NextLink>
+              <Link href={item.url}>{item.title}</Link>
             </div>
           );
         })}
       {resume && (
         <div className={styles.link}>
-          <NextLink href={resume} passHref>
-            <a target="_blank" rel="noopener noreferrer">
-              <Image
-                className={styles.image}
-                src="/icon-resume.svg"
-                width={16}
-                height={16}
-                alt=""
-              />
-              Resume
-            </a>
-          </NextLink>
+          <Link href={resume} target="_blank" rel="noopener noreferrer">
+            <Image
+              className={styles.image}
+              src="/icon-resume.svg"
+              width={16}
+              height={16}
+              alt=""
+            />
+            Resume
+          </Link>
         </div>
       )}
       {email && (
         <div className={styles.link}>
-          <NextLink href={email} passHref>
-            <a>
-              <Image
-                className={styles.image}
-                src="/icon-email.svg"
-                width={16}
-                height={16}
-                alt=""
-              />
-              Email
-            </a>
-          </NextLink>
+          <Link href={email}>
+            <Image
+              className={styles.image}
+              src="/icon-email.svg"
+              width={16}
+              height={16}
+              alt=""
+            />
+            Email
+          </Link>
         </div>
       )}
     </div>

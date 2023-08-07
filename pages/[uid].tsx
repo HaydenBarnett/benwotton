@@ -35,7 +35,7 @@ const Page = ({ page, projects }: PageProps) => {
 
 export const getStaticProps: GetStaticProps = async (context) => {
   const client = Client();
-  const response = await client.query("", {
+  const response = await client.get({
     pageSize: 200,
   });
   const page = response.results.filter(

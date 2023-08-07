@@ -52,7 +52,7 @@
       outline: 1px dotted var(--white);
     }
 
-    & > div {
+    & > img {
       margin-right: 0.5rem !important;
     }
   }
@@ -94,7 +94,7 @@
       border-left: 1px solid var(--grey-500);
     }
 
-    &:nth-last-child(-n + 2) a {
+    &:nth-last-child(-n + 1) a {
       border-bottom: 0;
     }
   }

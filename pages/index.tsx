@@ -7,7 +7,7 @@ const Home = () => {
 
 export const getStaticProps: GetStaticProps = async () => {
   const client = Client();
-  const response = await client.query("", {
+  const response = await client.get({
     pageSize: 200,
   });
   const globals = response.results.filter((doc) => doc.type === "globals")[0];

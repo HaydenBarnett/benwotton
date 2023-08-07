@@ -23,12 +23,10 @@ export const Header = ({ logo, background, nav, fullscreen }: HeaderProps) => {
   const logoHref = fullscreen && nav && nav.items ? nav?.items[0]?.url : "/";
   return (
     <div className={headerClassName}>
-      <NextLink href={logoHref} passHref>
-        <a className={styles.link}>
-          <div className={styles.inner}>
-            <Logo {...logo} />
-          </div>
-        </a>
+      <NextLink href={logoHref} className={styles.link}>
+        <div className={styles.inner}>
+          <Logo {...logo} />
+        </div>
       </NextLink>
       <Nav {...nav} fullscreen={fullscreen} />
       {background?.poster && background?.video && (

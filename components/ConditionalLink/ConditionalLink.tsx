@@ -16,10 +16,8 @@ export const ConditionalLink = ({
 }: ConditionalLinkProps) => {
   if (href) {
     return (
-      <Link href={href} passHref>
-        <a target={target} className={className}>
-          {children}
-        </a>
+      <Link href={href} target={target} className={className}>
+        {children}
       </Link>
     );
   }
